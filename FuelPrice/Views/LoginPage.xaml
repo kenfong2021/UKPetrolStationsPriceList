@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             xmlns:models="clr-namespace:FuelPrice.Models"
+             xmlns:viewModels="clr-namespace:FuelPrice.ViewModels"
+             ios:Page.UseSafeArea="true"
+             x:Class="FuelPrice.Views.LoginPage">
+    <ContentPage.Content>
+        <Grid ColumnSpacing="20" Padding="15" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <dxe:TextEdit Text="{Binding User.email}" LabelText="Login" Margin="0" />
+            <dxe:PasswordEdit Text="{Binding User.password}" LabelText="Password"  LabelFontSize="Small" Margin="0" Grid.Row="1"/>
+            <Button Text="Register Account" Command="{Binding RegisterUserWithEmailAndPasswordCommand}" Margin="0,10,0,0" Grid.Row="2"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

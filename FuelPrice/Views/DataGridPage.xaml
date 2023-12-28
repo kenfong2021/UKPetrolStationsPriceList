@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxg="clr-namespace:DevExpress.Maui.DataGrid;assembly=DevExpress.Maui.DataGrid"
+             xmlns:templates="clr-namespace:FuelPrice.Views.Templates"
+             Title="{Binding Title}"
+             IconImageSource="browse"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             ios:Page.UseSafeArea="true"
+             x:Class="FuelPrice.Views.DataGridPage">
+ 
+            <dxg:DataGridView x:Name="grid"
+            ShowAutoFilterRow="True"
+            IsPullToRefreshEnabled="true" 
+            PullToRefreshCommand="{Binding PullToRefreshCommand}"                        
+            IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"  
+            ItemsSource="{Binding Stations}">
+                <dxg:DataGridView.Columns>
+                    <dxg:TextColumn FieldName="brand" Caption="Brand" AutoFilterCondition="Contains" AutoFilterValue=""/>
+                    <dxg:TextColumn FieldName="postcode" Caption="Post Code" AutoFilterCondition="Contains" AutoFilterValue=""/>
+                    <dxg:NumberColumn FieldName="distance" Caption="Dist. (KM)"/>
+                    <dxg:NumberColumn FieldName="petrol" Caption="Petrol"/>
+                    <dxg:NumberColumn FieldName="diesel" Caption="Diesel"/>
+                </dxg:DataGridView.Columns>
+            </dxg:DataGridView>
+      
+</ContentPage>
